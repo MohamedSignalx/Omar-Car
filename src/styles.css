@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0c0d0f;
+  --color-foreground: #f4f1ea;
+  --color-card: #15171b;
+  --color-card-foreground: #f4f1ea;
+  --color-muted: #1c1f25;
+  --color-muted-foreground: #9a958c;
+  --color-border: #2a2d33;
+  --color-primary: #c41e3a;
+  --color-primary-foreground: #f4f1ea;
+  --color-accent: #2a9d6e;
+  --color-accent-foreground: #f4f1ea;
+  --color-ring: #c41e3a;
+  --font-sans: "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --shadow-border: 0 0 0 1px rgb(255 255 255 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(255 255 255 / 0.13);
+  --shadow-cta: 0 10px 28px rgb(196 30 58 / 0.32);
+  --text-2xs: 0.68rem;
+  --text-2xs--line-height: 1.2;
+  --tracking-kicker: 0.16em;
+  --aspect-photo: 4 / 3;
+  --aspect-wide: 16 / 10;
+  --height-header: 4.25rem;
+  --height-hero: min(46rem, calc(100dvh - 7.5rem));
+  --height-lightbox: 70dvh;
+  --aspect-featured: 4 / 5;
+  --grid-template-columns-hero: minmax(0, 1.35fr) minmax(0, 1fr);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100dvh;
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.num {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+}
+
+.media-frame {
+  outline: 1px solid rgb(255 255 255 / 0.1);
+  outline-offset: -1px;
+}
+
+.media-face {
+  object-position: 50% 35%;
+}
