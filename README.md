@@ -1,9 +1,8 @@
-# عمر ف. ع. عمر | ورشة بقعة ضوء
+# عمر ف. ع. عمر — ملف تشخيص السيارات
 
-Omar F A Omar — Spot Light Garage, Riyadh.
+Omar F A Omar — automotive diagnostic technician, Riyadh.
 
-- **Phone / WhatsApp:** +966 54 445 2990
-- **Live:** https://mohamedsignalx.github.io/Omar-Car/
-- **Vercel:** https://omar-fa-omar.vercel.app
-
-Snapchat `@omar4man` · TikTok `@omarfaomar`
+- **WhatsApp / Call:** +966 54 445 2990
+- **Email:** omar4man@gmail.com
+- **Live:** https://omar-fa-omar.vercel.app
+- **Repo:** https://github.com/MohamedSignalx/Omar-Car
