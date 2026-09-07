@@ -1,8 +1,7 @@
-# عمر ف. ع. عمر — ملف تشخيص السيارات
+# ورشة بقعة ضوء — هندسة الدقة
 
-Omar F A Omar — automotive diagnostic technician, Riyadh.
+Omar F A Omar — General Manager & technical consultant.
 
-- **WhatsApp / Call:** +966 54 445 2990
-- **Email:** omar4man@gmail.com
+- **WhatsApp (booking):** +966 59 664 8717
+- **Omar direct:** +966 54 445 2990
 - **Live:** https://omar-fa-omar.vercel.app
-- **Repo:** https://github.com/MohamedSignalx/Omar-Car
