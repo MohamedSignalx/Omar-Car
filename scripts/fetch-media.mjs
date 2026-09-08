@@ -2,17 +2,22 @@
 /**
  * Pull campaign media from GitHub when the deploy bundle does not include
  * the large MP4s (Vercel file-deploy size limit). Local / Git clones skip.
+ *
+ * Tiny git files (favicon.svg is 227 bytes) MUST count as present. A >512
+ * byte gate treated the icon as missing, then the LFS URL 404'd and the
+ * whole Vercel build died.
  */
 import { existsSync, mkdirSync, writeFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const BASE =
+const LFS =
   "https://media.githubusercontent.com/media/MohamedSignalx/Omar-Car/main/";
+const RAW =
+  "https://raw.githubusercontent.com/MohamedSignalx/Omar-Car/main/";
 
 const FILES = [
-  "public/favicon.svg",
   "public/og.jpg",
   "public/media/case-g70.jpg",
   "public/media/case-sonata.jpg",
@@ -90,21 +95,33 @@ const FILES = [
 function present(rel) {
   const dest = join(ROOT, rel);
   try {
-    return existsSync(dest) && statSync(dest).size > 512;
+    return existsSync(dest) && statSync(dest).size > 0;
   } catch {
     return false;
   }
 }
 
+async function tryFetch(url) {
+  const res = await fetch(url);
+  if (!res.ok) return null;
+  const buf = Buffer.from(await res.arrayBuffer());
+  return buf.length > 0 ? buf : null;
+}
+
 async function pull(rel) {
   const dest = join(ROOT, rel);
   mkdirSync(dirname(dest), { recursive: true });
-  const res = await fetch(BASE + rel);
-  if (!res.ok) {
-    throw new Error(`[fetch-media] ${rel} → ${res.status}`);
+  const buf = (await tryFetch(LFS + rel)) || (await tryFetch(RAW + rel));
+  if (buf) {
+    writeFileSync(dest, buf);
+    process.stdout.write(`  ${rel}\n`);
+    return;
   }
-  writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
-  process.stdout.write(`  ${rel}\n`);
+  if (present(rel)) {
+    process.stdout.write(`  ${rel} (kept local)\n`);
+    return;
+  }
+  console.warn(`[fetch-media] skip ${rel} (not on GitHub)`);
 }
 
 const missing = FILES.filter((rel) => !present(rel));
