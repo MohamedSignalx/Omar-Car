@@ -35,6 +35,10 @@ const FILES = [
   "public/media/social-snapchat.jpg",
   "public/media/social-tiktok.jpg",
   "public/media/social-whatsapp.jpg",
+  "public/media/omar-scan-poster.jpg",
+  "public/media/omar-cover.jpg",
+  "public/media/omar-lift-wide.jpg",
+  "public/media/brand-lockup.jpg",
   "public/posters/floor-bay-2.jpg",
   "public/posters/floor-cabin.jpg",
   "public/posters/floor-case-g70.jpg",
@@ -90,6 +94,15 @@ const FILES = [
   "public/videos/studio-scan.mp4",
   "public/videos/studio-story-consult.mp4",
   "public/videos/studio-talk.mp4",
+  "public/videos/floor-bay-night.mp4",
+  "public/videos/profile-sample.mp4",
+  "public/videos/profile-sample-2.mp4",
+  "public/posters/case-sonata.jpg",
+  "public/posters/intake-flatbed.jpg",
+  "public/posters/omar-talk.jpg",
+  "public/posters/floor-bay-night.jpg",
+  "public/posters/profile-sample.jpg",
+  "public/posters/profile-sample-2.jpg",
 ];
 
 function present(rel) {

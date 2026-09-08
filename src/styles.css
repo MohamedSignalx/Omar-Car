@@ -29,7 +29,7 @@
   --aspect-photo: 4 / 3;
   --aspect-wide: 16 / 10;
   --height-header: 4.25rem;
-  --height-hero: min(46rem, calc(100dvh - 7.5rem));
+  --height-hero: min(34rem, calc(100dvh - 14rem));
   --height-lightbox: 70dvh;
   --aspect-featured: 4 / 5;
   --grid-template-columns-hero: minmax(0, 1.35fr) minmax(0, 1fr);

@@ -16,6 +16,46 @@ export const LINKS = {
   call: "tel:+966596648717",
 } as const;
 
+export const HANDLE = "OMAR4MAN";
+
+export const SOCIALS = [
+  {
+    id: "whatsapp",
+    href: WA_INTAKE,
+    icon: "/media/social-whatsapp.jpg",
+    ar: "واتساب",
+    en: "WhatsApp",
+  },
+  {
+    id: "call",
+    href: LINKS.call,
+    icon: "/media/social-call.png",
+    ar: "اتصال",
+    en: "CallMe",
+  },
+  {
+    id: "maps",
+    href: LINKS.maps,
+    icon: "/media/social-maps.jpg",
+    ar: "جوجل ماب",
+    en: "Maps",
+  },
+  {
+    id: "snapchat",
+    href: LINKS.snapchat,
+    icon: "/media/social-snapchat.jpg",
+    ar: "سناب شات",
+    en: "Snapchat",
+  },
+  {
+    id: "tiktok",
+    href: LINKS.tiktok,
+    icon: "/media/social-tiktok.jpg",
+    ar: "تيك توك",
+    en: "TikTok",
+  },
+] as const;
+
 export const SHOP = { ar: "ورشة بقعة ضوء", en: "Spot Light Garage" };
 export const CAMPAIGN = { ar: "هندسة الدقة", en: "Precision Driven" };
 export const OMAR = { ar: "عمر", en: "Omar" };
@@ -60,6 +100,14 @@ export const COPY_SECTION = {
   sub: {
     ar: "الصق كما هي على الريلز أو واتساب. الرقم ثابت.",
     en: "Paste as-is on Reels or WhatsApp. The number stays the same.",
+  },
+};
+
+export const CONTACT = {
+  title: { ar: "تواصل مع عمر", en: "Reach Omar" },
+  sub: {
+    ar: "واتساب، اتصال، الخريطة، سناب، تيك توك — نفس الرقم.",
+    en: "WhatsApp, call, map, Snapchat, TikTok — same number.",
   },
 };
 
@@ -411,6 +459,72 @@ export const assets: Asset[] = [
     use: { ar: "حالة من الورشة", en: "Floor case" },
   },
   {
+    id: "sonata-case",
+    kind: "video",
+    src: "/videos/case-sonata.mp4",
+    poster: "/posters/case-sonata.jpg",
+    ratio: "portrait",
+    pillar: "skill",
+    duration: "1:15",
+    title: { ar: "سوناتا — الحالة كاملة", en: "Sonata full case" },
+    use: { ar: "ريلز الحالة", en: "Case Reel" },
+  },
+  {
+    id: "flatbed",
+    kind: "video",
+    src: "/videos/intake-flatbed.mp4",
+    poster: "/posters/intake-flatbed.jpg",
+    ratio: "portrait",
+    pillar: "customer",
+    duration: "2s",
+    title: { ar: "السطحة عند الباب", en: "Flatbed at the door" },
+    use: { ar: "افتتاح ستوري", en: "Story open" },
+  },
+  {
+    id: "omar-talk-alt",
+    kind: "video",
+    src: "/videos/omar-talk.mp4",
+    poster: "/posters/omar-talk.jpg",
+    ratio: "portrait",
+    pillar: "identity",
+    duration: "55s",
+    title: { ar: "عمر يتكلم", en: "Omar speaking" },
+    use: { ar: "يوتيوب، واتساب", en: "YouTube, WhatsApp" },
+  },
+  {
+    id: "bay-night",
+    kind: "video",
+    src: "/videos/floor-bay-night.mp4",
+    poster: "/posters/floor-bay-night.jpg",
+    ratio: "portrait",
+    pillar: "skill",
+    duration: "16s",
+    title: { ar: "الورشة ليلاً", en: "The bay at night" },
+    use: { ar: "ستوري الورشة", en: "Shop story" },
+  },
+  {
+    id: "profile-1",
+    kind: "video",
+    src: "/videos/profile-sample.mp4",
+    poster: "/posters/profile-sample.jpg",
+    ratio: "landscape",
+    pillar: "identity",
+    duration: "47s",
+    title: { ar: "فيلم الملف الشخصي", en: "Profile film" },
+    use: { ar: "يوتيوب، جوجل، بنر", en: "YouTube, Google, banner" },
+  },
+  {
+    id: "profile-2",
+    kind: "video",
+    src: "/videos/profile-sample-2.mp4",
+    poster: "/posters/profile-sample-2.jpg",
+    ratio: "landscape",
+    pillar: "identity",
+    duration: "47s",
+    title: { ar: "فيلم الورشة", en: "Shop film" },
+    use: { ar: "إعلان مموّل، يوتيوب", en: "Paid ad, YouTube" },
+  },
+  {
     id: "photo-portrait",
     kind: "image",
     src: "/media/omar-portrait.jpg",
@@ -490,6 +604,42 @@ export const assets: Asset[] = [
     pillar: "skill",
     title: { ar: "سوناتا", en: "Sonata" },
     use: { ar: "غلاف ريلز", en: "Reel cover" },
+  },
+  {
+    id: "photo-scan-poster",
+    kind: "image",
+    src: "/media/omar-scan-poster.jpg",
+    ratio: "portrait",
+    pillar: "identity",
+    title: { ar: "المهندس عمر", en: "Engineer Omar" },
+    use: { ar: "بروفايل، سناب، واتساب", en: "Profile, Snap, WhatsApp" },
+  },
+  {
+    id: "photo-cover",
+    kind: "image",
+    src: "/media/omar-cover.jpg",
+    ratio: "landscape",
+    pillar: "identity",
+    title: { ar: "غلاف جوجل", en: "Google cover" },
+    use: { ar: "بنر جوجل، يوتيوب", en: "Google banner, YouTube" },
+  },
+  {
+    id: "photo-lift-wide",
+    kind: "image",
+    src: "/media/omar-lift-wide.jpg",
+    ratio: "landscape",
+    pillar: "skill",
+    title: { ar: "عمر على الرافعة", en: "Omar at the lift" },
+    use: { ar: "غلاف، إعلان أفقي", en: "Cover, landscape ad" },
+  },
+  {
+    id: "photo-lockup",
+    kind: "image",
+    src: "/media/brand-lockup.jpg",
+    ratio: "landscape",
+    pillar: "identity",
+    title: { ar: "ورشة بقعة ضوء", en: "Spot Light lockup" },
+    use: { ar: "إعلان، بنر، ستوري", en: "Ad, banner, story" },
   },
 ];
 

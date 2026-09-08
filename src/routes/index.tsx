@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Play } from "lucide-react";
-import { SiteFooter, SiteHeader, StickyWhatsApp } from "@/components/chrome";
+import { SiteFooter, SiteHeader, StickyWhatsApp, ContactBand, SocialDock } from "@/components/chrome";
 import { CopyKit } from "@/components/copy-kit";
 import { Lightbox } from "@/components/lightbox";
 import { LoopClip } from "@/components/loop-clip";
@@ -36,6 +36,7 @@ function Home() {
       <SiteHeader />
       <main>
         <HeroMosaic />
+        <ContactBand />
         <AssetLibrary
           filter={filter}
           onFilter={setFilter}
@@ -105,12 +106,17 @@ function CaptionStrip() {
     "flex min-h-12 items-center justify-center rounded-xl bg-card px-4 text-center text-sm font-medium shadow-[var(--shadow-border)]";
 
   return (
-    <div className="grid grid-cols-1 gap-1 px-1 pb-1 sm:grid-cols-3">
-      <p className={chip}>{t(CAPTION.role)}</p>
-      <p className={chip}>{t(CAPTION.done)}</p>
-      <a href={LINKS.call} className={chip}>
-        <span className="num">{PHONE_DISPLAY}</span>
-      </a>
+    <div className="space-y-1 px-1 pb-1">
+      <div className="grid grid-cols-1 gap-1 sm:grid-cols-3">
+        <p className={chip}>{t(CAPTION.role)}</p>
+        <p className={chip}>{t(CAPTION.done)}</p>
+        <a href={LINKS.call} className={chip}>
+          <span className="num">{PHONE_DISPLAY}</span>
+        </a>
+      </div>
+      <div className="flex min-h-16 items-center justify-center rounded-xl bg-card px-3 py-2 shadow-[var(--shadow-border)]">
+        <SocialDock />
+      </div>
     </div>
   );
 }
